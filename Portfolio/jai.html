@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Unique Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003049;
+      --accent: #d62828;
+      --bg: #f8f9fa;
+      --text: #212529;
+      --dark-bg: #121212;
+      --dark-text: #f1f1f1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    .dark-mode {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      transition: background-color 0.5s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: var(--accent);
+      padding: 1rem;
+      transition: background-color 0.5s ease;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-darkmode {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, background-color 0.5s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .dark-mode .card {
+      background: #1e1e1e;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card i {
+      font-size: 1.8rem;
+      color: var(--accent);
+      transition: color 0.3s ease;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      transition: background-color 0.5s ease;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <header>
+    <h1 data-aos="fade-down">Hello, I'm PS JAISAI!</h1>
+    <p data-aos="fade-up">Creative Developer | Tech Explorer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 data-aos="fade-right">About Me</h2>
+    <p data-aos="fade-left">I’m a passionate web developer blending design with functionality. I specialize in building responsive, elegant, and accessible web experiences. Let's build something amazing together!</p>
+  </section>
+
+  <section id="skills">
+    <h2 data-aos="zoom-in">Skills</h2>
+    <div class="grid">
+      <div class="card" data-aos="flip-left"><i class="fab fa-html5"></i>HTML</div>
+      <div class="card" data-aos="flip-left"><i class="fab fa-css3-alt"></i>CSS</div>
+      <div class="card" data-aos="flip-left"><i class="fab fa-js"></i>JavaScript</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 data-aos="zoom-in">Portfolio Projects</h2>
+    <div class="grid">
+      <div class="card" data-aos="fade-up">
+        <h3>Real time Blog</h3>
+        <p>A clean and minimal blog with real-time comment system using localStorage.</p>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h3>Weather Dashboard</h3>
+        <p>Responsive weather tracker using OpenWeatherMap API and dynamic visuals.</p>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h3>Animated Portfolio</h3>
+        <p>Styled portfolio with animations, transitions, and creative navigation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2 data-aos="fade-right">Resume</h2>
+    <p>Download my <a href="#" style="color: var(--accent); font-weight: bold; transition: color 0.3s ease;">resume (PDF)</a> to know more about my experience and education background.</p>
+  </section>
+
+  <section id="contact">
+    <h2 data-aos="fade-left">Contact</h2>
+    <p>Let’s connect! You can reach me via:</p>
+    <ul>
+      <li>Email: <a href="mailto:psjaisai7272@gmail.com">psjaisai7272@gmail.com</a></li>
+      <li>LinkedIn: <a href="http://linkedin.com/in/ps-jaisai-699679346">linkedin.com/in/ps-jaisai-699679346</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PS JAISAI's Portfolio. Crafted with passion and pixels.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+
+</html>
